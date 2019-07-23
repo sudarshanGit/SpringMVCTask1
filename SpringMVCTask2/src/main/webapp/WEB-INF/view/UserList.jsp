@@ -20,6 +20,7 @@
 				<th>Age</th>
 				<th>Email</th>
 				<th>Country</th>
+				<th>Phone</th>
 			</tr>
 			<c:forEach var="user" items="${userList}">
 				<tr>
@@ -27,6 +28,7 @@
 					<td><c:out value="${user.age}" /></td>
 					<td><c:out value="${user.email}" /></td>
 					<td><c:out value="${user.country}" /></td>
+					<td><c:out value="${user.phone}" /></td>
 				</tr>
 			</c:forEach>
 		</table>

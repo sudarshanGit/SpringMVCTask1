@@ -9,11 +9,13 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.risk.validator.IsValidPhoneNumber;
+
 public class User {
 
 	@NotEmpty
 	@Pattern(regexp = "[^0-9]+")
-	@Size(min = 6, max = 20)
+	@Size(min = 6, max = 50)
 	private String name;
 
 	@Min(value = 12)
@@ -27,6 +29,9 @@ public class User {
 
 	@NotEmpty
 	private String country;
+	
+	@IsValidPhoneNumber
+	private String phone; 
 
 	
 	
@@ -62,12 +67,21 @@ public class User {
 		this.country = country;
 	}
 
-	public User(String name, Integer age, String email, String country) {
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public User(String name, Integer age, String email, String country,String phone) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.email = email;
 		this.country = country;
+		this.phone = phone;
 	}
 
 	public User() {
